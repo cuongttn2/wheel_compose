@@ -1,5 +1,3 @@
-package com.example.wheelcompose.ui.widget
-
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,11 +10,10 @@ import timber.log.Timber
 fun WheelSpinner(
     segments: List<String>,
     modifier: Modifier = Modifier,
-    onSegmentSelected: (Int) -> Unit = {}, // Callback khi chọn 1 phần, có thể xử lý thêm
 ) {
     /**
     Góc quét cho mỗi phần
-    */
+     */
     val sweepAngle = 360f / segments.size
 
     Canvas(modifier = modifier) {

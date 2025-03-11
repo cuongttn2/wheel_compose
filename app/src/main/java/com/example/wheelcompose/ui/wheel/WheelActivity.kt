@@ -8,6 +8,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import com.example.wheelcompose.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class WheelActivity : BaseActivity<WheelViewModel>() {
@@ -19,7 +20,10 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
         savedInstanceState: Bundle?,
         snackBarHostState: SnackbarHostState,
     ) {
-        WheelScreen()
+        val segments = listOf("Phần 1", "Phần 2", "Phần 3", "Phần 4", "Phần 5", "Phần 6")
+        WheelScreen(durationMillis = 10000, segments = segments) {
+            Timber.tag("WheelSpinner").d(it)
+        }
     }
 
     override fun init(savedInstanceState: Bundle?) {
