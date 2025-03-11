@@ -38,7 +38,7 @@ val KarlaFontFamily = FontFamily(
     Font(resId = R.font.karla_bold, weight = FontWeight.Bold),
 )
 
-val WheelComposeTypography = Typography(
+val typography = Typography(
     displayLarge = TextStyle(
         fontFamily = MontserratFontFamily,
         fontWeight = FontWeight.Light,
