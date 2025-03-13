@@ -150,6 +150,7 @@ dependencies {
     implementation(libs.androidx.cryptoPreferebce)
     implementation(libs.accompanist.drawablepainter)
     implementation(libs.androidx.compose.ui.googlefonts)
+    implementation(libs.lottie.compose)
 //  admob
 //    implementation(libs.play.services.ads)
 //    implementation(libs.user.messaging.platform)
