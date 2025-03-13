@@ -4,13 +4,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import com.example.wheelcompose.ui.utils.Utils.assignColorsToSegments
 import timber.log.Timber
 
 @Composable
 fun WheelSpinner(
     segments: List<String>,
     modifier: Modifier = Modifier,
+    availableColors: List<Color> = listOf(
+        Color.Blue,
+        Color.Yellow,
+        Color.Magenta,
+        Color.Cyan,
+        Color.Green,
+        Color.Red
+    ),
 ) {
+    val segmentColors = assignColorsToSegments(segments.size, availableColors)
+
     /**
     Góc quét cho mỗi phần
      */
@@ -32,11 +43,7 @@ fun WheelSpinner(
             Timber.tag("WheelSpinner")
                 .d("sweepAngle: ${sweepAngle}, index: ${index}, startAngle: $startAngle")
             drawArc(
-                color = Color(
-                    red = (100 + index * 30) % 255,
-                    green = (150 + index * 20) % 255,
-                    blue = (200 + index * 10) % 255
-                ),
+                color = segmentColors[index],
                 startAngle = startAngle,
                 sweepAngle = sweepAngle,
                 useCenter = true, // Vẽ thành hình quạt (pie)
