@@ -21,7 +21,7 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
         snackBarHostState: SnackbarHostState,
     ) {
         val segments = listOf("Phần 1", "Phần 2", "Phần 3", "Phần 4", "Phần 5", "Phần 6")
-        WheelScreen(durationMillis = 10000, segments = segments) {
+        WheelScreen(segments = segments) {
             Timber.tag("WheelSpinner").d(it)
         }
     }
