@@ -1,4 +1,4 @@
-package com.example.wheelcompose.ui.utils
+package com.example.wheelcompose.utils
 
 import androidx.compose.ui.graphics.Color
 

@@ -66,3 +66,18 @@ val md_theme_dark_scrim = Color(0xFF000000)
 
 
 val seed = Color(0xFF825500)
+val forceColors = listOf(
+    Color(0xFFB3E5FC), // Xanh nhạt
+    Color(0xFF81D4FA), // Xanh nhạt đậm hơn
+    Color(0xFFFFB74D), // Vàng cam
+    Color(0xFFFFA726), // Vàng cam đậm
+    Color(0xFFF44336)  // Đỏ
+)
+
+val wheelColors = listOf(
+    Color(0xFFCCFF00),
+    Color(0xFF2196F3),
+    Color(0xFF3F51B5),
+    Color(0xFFF44336),
+    Color(0xFF855AC4)
+)

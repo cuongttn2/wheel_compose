@@ -1,3 +1,6 @@
+package com.example.wheelcompose.ui.widget
+
+import android.graphics.Color.TRANSPARENT
 import android.graphics.Paint
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
@@ -6,21 +9,15 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.nativeCanvas
-import com.example.wheelcompose.ui.utils.Utils.assignColorsToSegments
+import com.example.wheelcompose.ui.theme.wheelColors
+import com.example.wheelcompose.utils.Utils.assignColorsToSegments
 import timber.log.Timber
 
 @Composable
 fun WheelSpinner(
     segments: List<String>,
     modifier: Modifier = Modifier,
-    availableColors: List<Color> = listOf(
-        Color.Blue,
-        Color.Yellow,
-        Color.Magenta,
-        Color.Cyan,
-        Color.Green,
-        Color.Red
-    ),
+    availableColors: List<Color> = wheelColors,
 ) {
     // Gán màu cho từng segment theo thuật toán đã định nghĩa (không chứa trắng, đen)
     val segmentColors = assignColorsToSegments(segments.size, availableColors)
@@ -37,7 +34,8 @@ fun WheelSpinner(
 
         // Tạo Paint để vẽ text trên nativeCanvas với kích thước chữ động
         val textPaint = Paint().apply {
-            color = android.graphics.Color.BLACK
+//            color = android.graphics.Color.BLACK
+            color = TRANSPARENT
             textSize = dynamicTextSize
             textAlign = Paint.Align.CENTER
         }
