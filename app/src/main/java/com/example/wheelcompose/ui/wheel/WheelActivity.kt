@@ -6,9 +6,10 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import com.example.wheelcompose.base.BaseActivity
+import com.example.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class WheelActivity : BaseActivity<WheelViewModel>() {
@@ -21,8 +22,10 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
         snackBarHostState: SnackbarHostState,
     ) {
         val segments = listOf("Phần 1", "Phần 2", "Phần 3", "Phần 4", "Phần 5", "Phần 6")
-        WheelScreen(segments = segments) {
-            Timber.tag("WheelSpinner").d(it)
+        CompositionLocalProvider(
+            LocalViewModelProvider provides viewModel
+        ) {
+            WheelScreen()
         }
     }
 

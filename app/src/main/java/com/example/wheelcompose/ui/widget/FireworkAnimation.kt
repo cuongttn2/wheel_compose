@@ -9,6 +9,7 @@ import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
+import timber.log.Timber
 
 @Composable
 fun FireworkAnimation(
@@ -16,6 +17,7 @@ fun FireworkAnimation(
     modifier: Modifier = Modifier,
     onAnimationFinished: () -> Unit = {},
 ) {
+    Timber.tag("WheelSpinner").d("FireworkAnimation: $isVisible")
     if (isVisible) {
         // Load file JSON animation từ thư mục assets (đảm bảo file "fireworks.json" đã được đặt vào src/main/assets)
         val composition by rememberLottieComposition(LottieCompositionSpec.Asset("anim_firework.json"))
