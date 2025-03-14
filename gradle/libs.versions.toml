@@ -19,7 +19,7 @@ playServicesAds = "24.1.0"
 timber = "5.0.1"
 room = "2.6.1"
 security-crypto = "1.0.0"
-ksp = "2.1.0-1.0.29"
+ksp = "2.1.10-1.0.31"
 dimen = "1.1.0"
 userMessagingPlatform = "3.1.0"
 
