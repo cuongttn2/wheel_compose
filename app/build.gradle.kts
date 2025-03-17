@@ -23,11 +23,11 @@ android {
     val keystorePropertiesFile = rootProject.file("keystore.properties")
     val keyfile = readProperties(keystorePropertiesFile)
 
-    namespace = "com.example.wheelcompose"
+    namespace = "com.qsd.wheelcompose"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.wheelcompose"
+        applicationId = "com.qsd.wheelcompose"
         minSdk = 28
         targetSdk = 35
         versionCode = 1
