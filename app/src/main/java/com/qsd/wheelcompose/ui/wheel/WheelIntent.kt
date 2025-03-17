@@ -6,5 +6,6 @@ sealed class WheelIntent {
     data class UpdateNames(val names: String) : WheelIntent()
     object HideFirework : WheelIntent()
     object ResetResultName : WheelIntent()
+    data class HandleVisibleNamesField(val visible: Boolean) : WheelIntent()
 
 }

@@ -4,7 +4,8 @@ private val defaultWheelNames =
     mutableListOf<String>("One", "Two", "Three", "Four", "Five", "Six")
 
 data class UIWheelState(
-    val showFirework: Boolean = false,
+    val playFirework: Boolean = false,
     val names: MutableList<String> = defaultWheelNames,
     val resultName: String? = null,
+    val visibleNamesField: Boolean = true,
 )
