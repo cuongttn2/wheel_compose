@@ -93,6 +93,7 @@ fun SpinResult(
                 ) {
                     Icon(
                         imageVector = Icons.Rounded.Close,
+                        tint = MaterialTheme.colorScheme.primary,
                         contentDescription = "Close"
                     )
                 }
@@ -101,6 +102,7 @@ fun SpinResult(
                     text = name,
                     fontSize = 16.sp,
                     maxLines = 3,
+                    color = Color.Black,
                     textAlign = TextAlign.Center,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier

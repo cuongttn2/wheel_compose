@@ -36,18 +36,23 @@ class WheelViewModel @Inject constructor() : BaseViewModel() {
                 resetResultName()
             }
 
+            is WheelIntent.HandleVisibleNamesField -> {
+                handleVisibleNamesField(intent.visible)
+            }
+
         }
     }
 
     private fun handleWheelResult(name: String) {
         _state.update {
-            it.copy(resultName = name, showFirework = true)
+            it.copy(resultName = name, playFirework = true)
         }
     }
 
     private fun resetResultName() {
         _state.update {
-            it.copy(resultName = null)
+            val newNames = it.names.filter { n -> n != it.resultName }.toMutableList()
+            it.copy(names = newNames, resultName = null)
         }
     }
 
@@ -66,7 +71,13 @@ class WheelViewModel @Inject constructor() : BaseViewModel() {
 
     private fun hideFirework() {
         _state.update {
-            it.copy(showFirework = false)
+            it.copy(playFirework = false)
+        }
+    }
+
+    private fun handleVisibleNamesField(visible: Boolean) {
+        _state.update {
+            it.copy(visibleNamesField = visible)
         }
     }
 

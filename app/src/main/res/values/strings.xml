@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WheelCompose</string>
+    <string name="input_name">Input name</string>
 </resources>
