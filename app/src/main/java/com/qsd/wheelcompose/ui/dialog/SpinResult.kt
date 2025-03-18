@@ -32,10 +32,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.qsd.wheelcompose.ui.theme.typography
 
 @Composable
 fun SpinResult(
@@ -100,7 +100,7 @@ fun SpinResult(
 
                 Text(
                     text = name,
-                    fontSize = 16.sp,
+                    style = typography.titleMedium,
                     maxLines = 3,
                     color = Color.Black,
                     textAlign = TextAlign.Center,

@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.main
+package com.qsd.wheelcompose.ui.setting
 
 import android.content.Context
 import androidx.lifecycle.viewModelScope
@@ -16,10 +16,9 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(@ApplicationContext private val context: Context) :
-    BaseViewModel() {
-    private val _state = MutableStateFlow<UIStateHome>(UIStateHome())
-    val state: StateFlow<UIStateHome> = _state
+class SettingViewModel @Inject constructor(@ApplicationContext private val context: Context) : BaseViewModel() {
+    private val _state = MutableStateFlow<UIStateSetting>(UIStateSetting())
+    val state: StateFlow<UIStateSetting> = _state
 
     init {
         initNavButton()
@@ -29,8 +28,8 @@ class MainViewModel @Inject constructor(@ApplicationContext private val context:
         viewModelScope.launch(Dispatchers.IO) {
             val list = mutableListOf<NavButtonItems>()
             val names: Array<String> =
-                context.resources.getStringArray(R.array.home_nav_btn_name)
-            val ta = context.resources.obtainTypedArray(R.array.home_nav_btn_icon)
+                context.resources.getStringArray(R.array.setting_nav_btn_name)
+            val ta = context.resources.obtainTypedArray(R.array.setting_nav_btn_icon)
             val icons = IntArray(ta.length()) { i ->
                 ta.getResourceId(i, 0)
 
@@ -40,7 +39,7 @@ class MainViewModel @Inject constructor(@ApplicationContext private val context:
                     NavButtonItems(
                         icon = icons[index],
                         name = string,
-                        screenId = HomeNavButtonID.entries[index].ordinal
+                        screenId = SettingNavButtonID.entries[index].ordinal
                     )
                 )
             }

@@ -32,9 +32,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.qsd.wheelcompose.R
+import com.qsd.wheelcompose.ui.theme.typography
 
 @Composable
 fun NamesArea(
@@ -64,7 +64,7 @@ fun NamesArea(
         ) {
             Text(
                 text = stringResource(R.string.input_name),
-                fontWeight = FontWeight.Black,
+                style = typography.bodyMedium,
                 color = Color.Black
             )
             Spacer(modifier = Modifier.weight(1f))

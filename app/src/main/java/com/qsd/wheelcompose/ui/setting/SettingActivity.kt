@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.wheel
+package com.qsd.wheelcompose.ui.setting
 
 import android.content.Context
 import android.content.Intent
@@ -9,14 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
+import com.qsd.wheelcompose.ui.about.AboutAppActivity
+import com.qsd.wheelcompose.ui.privacy.PrivacyActivity
+import com.qsd.wheelcompose.ui.sound_setting.SoundSettingActivity
 import com.qsd.wheelcompose.ui.widget.NavBackIcon
 import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WheelActivity : BaseActivity<WheelViewModel>() {
-    override val viewModel: WheelViewModel by viewModels()
-    override val titleTopBar = R.string.wheel
+class SettingActivity : BaseActivity<SettingViewModel>() {
+    override val viewModel: SettingViewModel by viewModels()
+
+    override val titleTopBar = R.string.settings
 
     @Composable
     override fun BuiContent(
@@ -26,7 +30,9 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
         CompositionLocalProvider(
             LocalViewModelProvider provides viewModel
         ) {
-            WheelScreen()
+            SettingScreen {
+                navToScreen(it)
+            }
         }
     }
 
@@ -42,7 +48,7 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
 
     companion object {
         fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
-            val intent = Intent(context, WheelActivity::class.java)
+            val intent = Intent(context, SettingActivity::class.java)
             bundle?.let {
                 intent.putExtras(it)
             }
@@ -52,4 +58,21 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
             context.startActivity(intent)
         }
     }
+
+    private fun navToScreen(screenId: Int) {
+        when (screenId) {
+            SettingNavButtonID.Sound.ordinal -> {
+                SoundSettingActivity.start(this@SettingActivity)
+            }
+
+            SettingNavButtonID.About.ordinal -> {
+                AboutAppActivity.start(this@SettingActivity)
+            }
+
+            SettingNavButtonID.Privacy.ordinal -> {
+                PrivacyActivity.start(this@SettingActivity)
+            }
+        }
+    }
+
 }

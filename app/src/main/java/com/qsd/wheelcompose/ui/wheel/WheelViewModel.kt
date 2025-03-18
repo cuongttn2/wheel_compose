@@ -11,8 +11,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class WheelViewModel @Inject constructor() : BaseViewModel() {
-    private val _state = MutableStateFlow<UIWheelState>(UIWheelState())
-    val state: StateFlow<UIWheelState> = _state
+    private val _state = MutableStateFlow<UIStateWheel>(UIStateWheel())
+    val state: StateFlow<UIStateWheel> = _state
 
     fun handleIntent(intent: WheelIntent) {
         when (intent) {
