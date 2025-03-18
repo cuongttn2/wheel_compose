@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.main
+package com.qsd.wheelcompose.ui.widget
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

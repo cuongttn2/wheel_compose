@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.wheel
+package com.qsd.wheelcompose.ui.about
 
 import android.content.Context
 import android.content.Intent
@@ -6,28 +6,23 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
+import com.qsd.wheelcompose.ui.widget.Greeting
 import com.qsd.wheelcompose.ui.widget.NavBackIcon
-import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WheelActivity : BaseActivity<WheelViewModel>() {
-    override val viewModel: WheelViewModel by viewModels()
-    override val titleTopBar = R.string.wheel
+class AboutAppActivity : BaseActivity<AboutAppViewModel>() {
+    override val viewModel: AboutAppViewModel by viewModels<AboutAppViewModel>()
+    override val titleTopBar = R.string.about_app
 
     @Composable
     override fun BuiContent(
         savedInstanceState: Bundle?,
         snackBarHostState: SnackbarHostState,
     ) {
-        CompositionLocalProvider(
-            LocalViewModelProvider provides viewModel
-        ) {
-            WheelScreen()
-        }
+        Greeting("Screen") {}
     }
 
     override fun navigationIcon(): @Composable (() -> Unit) {
@@ -42,7 +37,7 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
 
     companion object {
         fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
-            val intent = Intent(context, WheelActivity::class.java)
+            val intent = Intent(context, AboutAppActivity::class.java)
             bundle?.let {
                 intent.putExtras(it)
             }
@@ -52,4 +47,5 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
             context.startActivity(intent)
         }
     }
+
 }

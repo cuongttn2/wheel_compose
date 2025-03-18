@@ -26,7 +26,37 @@
 
         <activity
             android:name=".ui.wheel.WheelActivity"
-            android:exported="true"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.rock_paper_scissors.RPSActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.sound_setting.SoundSettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.about.AboutAppActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.privacy.PrivacyActivity"
+            android:exported="false"
             android:theme="@style/Theme.WheelCompose">
         </activity>
 

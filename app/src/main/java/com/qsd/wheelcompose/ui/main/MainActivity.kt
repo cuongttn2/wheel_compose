@@ -4,28 +4,57 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
+import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSActivity
+import com.qsd.wheelcompose.ui.setting.SettingActivity
 import com.qsd.wheelcompose.ui.wheel.WheelActivity
+import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<MainViewModel>() {
     override val viewModel: MainViewModel by viewModels()
-    override val titleTopBar: String = "Main"
+    override val titleTopBar = R.string.home
 
     @Composable
     override fun BuiContent(
         savedInstanceState: Bundle?,
-        scaffoldState: SnackbarHostState
+        scaffoldState: SnackbarHostState,
     ) {
-        Greeting(name = "Android") {
-            WheelActivity.start(this@MainActivity)
+        CompositionLocalProvider(
+            LocalViewModelProvider provides viewModel
+        ) {
+            HomeScreen {
+                navToScreen(it)
+            }
         }
 
     }
 
+    override fun navigationIcon(): @Composable (() -> Unit) {
+        return {}
+    }
+
     override fun init(savedInstanceState: Bundle?) {
 
+    }
+
+    private fun navToScreen(screenId: Int) {
+        when (screenId) {
+            HomeNavButtonID.Wheel.ordinal -> {
+                WheelActivity.start(this@MainActivity)
+            }
+
+            HomeNavButtonID.RockHand.ordinal -> {
+                RPSActivity.start(this@MainActivity)
+            }
+
+            HomeNavButtonID.Setting.ordinal -> {
+                SettingActivity.start(this@MainActivity)
+            }
+        }
     }
 
 }

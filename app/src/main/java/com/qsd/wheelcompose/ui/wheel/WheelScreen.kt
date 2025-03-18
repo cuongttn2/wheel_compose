@@ -19,14 +19,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.qsd.wheelcompose.ui.dialog.SpinResult
 import com.qsd.wheelcompose.ui.wheel.WheelIntent.UpdateNames
 import com.qsd.wheelcompose.ui.widget.FireworkAnimation
-import com.qsd.wheelcompose.ui.widget.WheelSpinner
 import com.qsd.wheelcompose.utils.LocalViewModelProvider
 
 @Composable

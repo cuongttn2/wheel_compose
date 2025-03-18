@@ -44,8 +44,9 @@ abstract class BaseActivity<ViewModel : BaseViewModel> : ComponentActivity() {
         snackBarHostState: SnackbarHostState,
     )
 
+    abstract fun navigationIcon(): @Composable (() -> Unit)
     abstract fun init(savedInstanceState: Bundle?)
-    abstract val titleTopBar: String
+    abstract val titleTopBar: Int
 
     @OptIn(ExperimentalMaterial3Api::class)
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -74,8 +75,9 @@ abstract class BaseActivity<ViewModel : BaseViewModel> : ComponentActivity() {
                                 titleContentColor = MaterialTheme.colorScheme.primary,
                             ),
                             title = {
-                                Text(text = titleTopBar)
-                            }
+                                Text(text = getString(titleTopBar))
+                            },
+                            navigationIcon = navigationIcon()
                         )
                     }
                 ) { innerPaddingValues ->

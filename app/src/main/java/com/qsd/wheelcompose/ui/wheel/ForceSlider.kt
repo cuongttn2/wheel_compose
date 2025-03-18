@@ -19,10 +19,9 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.qsd.wheelcompose.ui.theme.forceColors
+import com.qsd.wheelcompose.ui.theme.typography
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -68,8 +67,9 @@ fun ForceSlider(
 
         Text(
             text = "${(force * 10).roundToInt() / 10f} %",
-            fontSize = 16.sp, fontWeight = FontWeight.Bold,
-            color = Color.White, fontStyle = FontStyle.Italic
+            style = typography.titleMedium,
+            color = Color.White,
+            fontStyle = FontStyle.Italic
         )
 
     }

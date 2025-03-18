@@ -1,6 +1,5 @@
-package com.qsd.wheelcompose.ui.widget
+package com.qsd.wheelcompose.ui.wheel
 
-import android.graphics.Color.TRANSPARENT
 import android.graphics.Paint
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
@@ -34,8 +33,7 @@ fun WheelSpinner(
 
         // Tạo Paint để vẽ text trên nativeCanvas với kích thước chữ động
         val textPaint = Paint().apply {
-//            color = android.graphics.Color.BLACK
-            color = TRANSPARENT
+            color = android.graphics.Color.BLACK
             textSize = dynamicTextSize
             textAlign = Paint.Align.CENTER
         }
