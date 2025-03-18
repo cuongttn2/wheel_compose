@@ -3,7 +3,7 @@
 
     <integer-array name="home_nav_btn_icon">
         <item>@drawable/ic_btn_wheel_of_fortune</item>
-        <item>@drawable/ic_btn_rock_hand</item>
+        <item>@drawable/ic_btn_rock_paper_scissors</item>
         <item>@drawable/ic_btn_setting</item>
     </integer-array>
 

@@ -1,6 +1,8 @@
 package com.qsd.wheelcompose.utils
 
 import androidx.compose.ui.graphics.Color
+import com.qsd.wheelcompose.R
+import com.qsd.wheelcompose.ui.privacy.RPSChoice
 
 object Utils {
 
@@ -31,4 +33,31 @@ object Utils {
 
         return result
     }
+
+    /**
+     * Hàm ánh xạ chuỗi lựa chọn thành resource ID của hình ảnh trong drawable
+     * Bạn cần có các file hình ảnh như ic_scissors, ic_rock, ic_paper trong thư mục res/drawable
+     */
+    fun getDrawableForChoice(choice: String): Int {
+        return when (choice) {
+            RPSChoice.Scissors.name -> R.drawable.ic_scissors_hand
+            RPSChoice.Rock.name -> R.drawable.ic_rock_hand
+            RPSChoice.Paper.name -> R.drawable.ic_paper_hand
+            else -> R.drawable.ic_btn_rock_paper_scissors
+        }
+    }
+
+    /**
+     * Hàm so sánh để xác định thắng - thua - hòa
+     */
+    fun getGameResult(choiceA: String, choiceB: String, nameP1: String, nameP2: String): String {
+        if (choiceA == choiceB) return "Draw"
+        return when (choiceA) {
+            RPSChoice.Scissors.name -> if (choiceB == RPSChoice.Rock.name) "$nameP2 Win" else "$nameP1 Win"
+            RPSChoice.Rock.name -> if (choiceB == RPSChoice.Paper.name) "$nameP2 Win" else "$nameP1 Win"
+            RPSChoice.Paper.name -> if (choiceB == RPSChoice.Scissors.name) "$nameP2 Win" else "$nameP1 Win"
+            else -> ""
+        }
+    }
+
 }
