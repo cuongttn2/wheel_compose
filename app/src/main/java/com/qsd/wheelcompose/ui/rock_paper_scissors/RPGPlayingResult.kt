@@ -22,8 +22,8 @@ import com.qsd.wheelcompose.utils.Utils.getDrawableForChoice
 
 @Composable
 fun RPGPlayingResult(
+    resultName: String? = null,
     isPlaying: Boolean,
-    isResultShown: Boolean,
     rpsList: List<String>,
     currentIndexP1: Int,
     currentIndexP2: Int,
@@ -52,7 +52,7 @@ fun RPGPlayingResult(
                     )
                 }
             } else {
-                if (isResultShown) {
+                if (resultName != null) {
                     Image(
                         painter = painterResource(id = getDrawableForChoice(finalChoiceP1)),
                         contentDescription = finalChoiceP1,
@@ -82,7 +82,7 @@ fun RPGPlayingResult(
                     )
                 }
             } else {
-                if (isResultShown) {
+                if (resultName != null) {
                     Image(
                         painter = painterResource(id = getDrawableForChoice(finalChoiceP2)),
                         contentDescription = finalChoiceP2,
