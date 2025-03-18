@@ -51,11 +51,11 @@ object Utils {
      * Hàm so sánh để xác định thắng - thua - hòa
      */
     fun getGameResult(choiceA: String, choiceB: String, nameP1: String, nameP2: String): String {
-        if (choiceA == choiceB) return "Draw"
+        if (choiceA == choiceB) return "Tie"
         return when (choiceA) {
-            RPSChoice.Scissors.name -> if (choiceB == RPSChoice.Rock.name) "$nameP2 Win" else "$nameP1 Win"
-            RPSChoice.Rock.name -> if (choiceB == RPSChoice.Paper.name) "$nameP2 Win" else "$nameP1 Win"
-            RPSChoice.Paper.name -> if (choiceB == RPSChoice.Scissors.name) "$nameP2 Win" else "$nameP1 Win"
+            RPSChoice.Scissors.name -> if (choiceB == RPSChoice.Rock.name) "$nameP2\nWin" else "$nameP1\nWin"
+            RPSChoice.Rock.name -> if (choiceB == RPSChoice.Paper.name) "$nameP2\nWin" else "$nameP1\nWin"
+            RPSChoice.Paper.name -> if (choiceB == RPSChoice.Scissors.name) "$nameP2\nWin" else "$nameP1\nWin"
             else -> ""
         }
     }

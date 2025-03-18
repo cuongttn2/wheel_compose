@@ -22,5 +22,6 @@
     <string name="setting_btn_about">About App</string>
     <string name="setting_btn_privacy">Privacy</string>
     <string name="setting_btn_sound">Sound Setting</string>
+    <string name="start">Start</string>
 
 </resources>

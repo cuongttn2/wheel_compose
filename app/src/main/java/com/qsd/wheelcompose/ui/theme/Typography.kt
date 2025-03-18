@@ -20,6 +20,8 @@ val MontserratFont = GoogleFont(name = "Montserrat")
 
 val KarlaFont = GoogleFont(name = "Karla")
 
+val PressStart2PFont = GoogleFont(name = "Press Start 2P")
+
 val MontserratFontFamily = FontFamily(
     Font(googleFont = MontserratFont, fontProvider = provider),
     Font(resId = R.font.montserrat_regular),
@@ -36,6 +38,13 @@ val KarlaFontFamily = FontFamily(
     Font(resId = R.font.karla_regular),
     Font(googleFont = KarlaFont, fontProvider = provider, weight = FontWeight.Bold),
     Font(resId = R.font.karla_bold, weight = FontWeight.Bold),
+)
+
+val PressStart2PFontFamily = FontFamily(
+    Font(googleFont = PressStart2PFont, fontProvider = provider),
+    Font(resId = R.font.press_start_2p_regular),
+    Font(googleFont = PressStart2PFont, fontProvider = provider, weight = FontWeight.Bold),
+    Font(resId = R.font.press_start_2p_regular, weight = FontWeight.Bold),
 )
 
 val typography = Typography(

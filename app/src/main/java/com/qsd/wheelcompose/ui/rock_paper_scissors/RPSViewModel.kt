@@ -2,6 +2,8 @@ package com.qsd.wheelcompose.ui.rock_paper_scissors
 
 import androidx.lifecycle.viewModelScope
 import com.qsd.wheelcompose.base.BaseViewModel
+import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.HideResultDialog
+import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.HideFirework
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.NameP1Change
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.NameP2Change
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.StartPlay
@@ -33,6 +35,15 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
             is NameP2Change -> {
                 updateNameP2(intent.name)
             }
+
+            is HideFirework -> {
+                hideFireWork()
+            }
+
+            is HideResultDialog -> {
+                hideDialogResult()
+            }
+
         }
     }
 
@@ -48,7 +59,11 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
         if (_state.value.isPlaying) return
         viewModelScope.launch(Dispatchers.Main) {
             _state.update {
-                it.copy(isPlaying = true, isResultShown = false, result = "")
+                it.copy(
+                    isPlaying = true,
+                    resultName = null,
+                    playFirework = false
+                )
             }
             //  playing game
             val startTime = System.currentTimeMillis()
@@ -75,11 +90,25 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
             _state.update {
                 it.copy(
                     isPlaying = false,
-                    isResultShown = true,
-                    result = getGameResult(it.finalChoiceP1, it.finalChoiceP2, it.nameP1, it.nameP2)
+                    playFirework = true,
+                    showResult = true,
+                    resultName = getGameResult(
+                        it.finalChoiceP1,
+                        it.finalChoiceP2,
+                        it.nameP1,
+                        it.nameP2
+                    )
                 )
             }
         }
+    }
+
+    private fun hideFireWork() {
+        _state.update { it.copy(playFirework = false) }
+    }
+
+    private fun hideDialogResult() {
+        _state.update { it.copy(showResult = false) }
     }
 
 }
