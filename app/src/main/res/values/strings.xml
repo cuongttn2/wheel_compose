@@ -24,4 +24,15 @@
     <string name="setting_btn_sound">Sound Setting</string>
     <string name="start">Start</string>
 
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">Start your journey</string>
+    <string name="txt_intro_rock_paper_scissors">Rock Paper Scissors</string>
+    <string name="txt_intro_lucky_wheel">Wheel of Fortune</string>
+    <string name="txt_intro_rps_description">Choose your role and let luck decide! Each player just needs to choose one of the two game roles, then the app will randomly select a winner. See if your strategy can get you a good laugh!</string>
+    <string name="txt_intro_explore_your_game">Explore your game!</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">Try your luck with the wheel!</string>
+    <string name="txt_intro_start">Start</string>
+    <string name="txt_intro_next">Next</string>
+    <string name="spin_play"><![CDATA[Spin & Play]]></string>
+
 </resources>

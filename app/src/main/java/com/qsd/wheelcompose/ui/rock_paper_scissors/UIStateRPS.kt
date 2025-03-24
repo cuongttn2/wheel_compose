@@ -1,7 +1,5 @@
 package com.qsd.wheelcompose.ui.rock_paper_scissors
 
-import com.qsd.wheelcompose.ui.privacy.RPSChoice
-
 data class UIStateRPS(
     val rpsList: List<String> = listOf(
         RPSChoice.Scissors.name,
