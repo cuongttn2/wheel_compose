@@ -1,5 +1,7 @@
 package com.qsd.wheelcompose.ui.main
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
@@ -39,6 +41,19 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun init(savedInstanceState: Bundle?) {
 
+    }
+
+    companion object {
+        fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
+            val intent = Intent(context, MainActivity::class.java)
+            bundle?.let {
+                intent.putExtras(it)
+            }
+            flags?.let {
+                intent.flags = flags
+            }
+            context.startActivity(intent)
+        }
     }
 
     private fun navToScreen(screenId: Int) {

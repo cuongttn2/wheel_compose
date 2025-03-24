@@ -2,7 +2,7 @@ package com.qsd.wheelcompose.utils
 
 import androidx.compose.ui.graphics.Color
 import com.qsd.wheelcompose.R
-import com.qsd.wheelcompose.ui.privacy.RPSChoice
+import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSChoice
 
 object Utils {
 
