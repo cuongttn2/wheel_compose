@@ -76,6 +76,17 @@ jobs:
         with:
           java-version: '17'
 
+      # Cài đặt và khởi động emulator trước khi chạy test
+      - name: Install Android SDK and Emulator
+        run: |
+          sdkmanager --update
+          sdkmanager "system-images;android-30;google_apis;x86_64"
+
+      - name: Start emulator
+        run: |
+          emulator -avd my_avd_name -no-window &
+          adb wait-for-device
+
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2 # 3rd party tool
         with:
