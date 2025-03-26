@@ -77,7 +77,7 @@ jobs:
           java-version: '17'
 
       - name: Run espresso tests
-        uses: reactivecircus/android-emulator-runner@v4 # 3rd party tool
+        uses: reactivecircus/android-emulator-runner@v2 # 3rd party tool
         with:
           api-level: 30
           script: ./gradlew connectedCheck
