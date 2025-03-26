@@ -46,6 +46,11 @@ class SettingActivity : BaseActivity<SettingViewModel>() {
 
     }
 
+    @Composable
+    override fun ObserveEventFlow() {
+
+    }
+
     companion object {
         fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
             val intent = Intent(context, SettingActivity::class.java)

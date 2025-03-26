@@ -40,6 +40,12 @@ class WheelActivity : BaseActivity<WheelViewModel>() {
 
     }
 
+
+    @Composable
+    override fun ObserveEventFlow() {
+
+    }
+
     companion object {
         fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
             val intent = Intent(context, WheelActivity::class.java)

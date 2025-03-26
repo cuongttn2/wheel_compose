@@ -44,7 +44,7 @@ fun LanguageContent(
         Spacer(modifier = Modifier.height(24.dp))
         Button(
             onClick = {
-
+                viewModel.handleIntent(LanguageIntent.NavigateScreen)
             },
             modifier = Modifier.fillMaxWidth()
         ) {

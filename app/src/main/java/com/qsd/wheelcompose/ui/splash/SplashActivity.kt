@@ -39,4 +39,9 @@ class SplashActivity : BaseActivity<SplashViewModel>() {
 
     }
 
+    @Composable
+    override fun ObserveEventFlow() {
+
+    }
+
 }
