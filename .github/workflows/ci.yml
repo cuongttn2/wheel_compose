@@ -76,11 +76,21 @@ jobs:
         with:
           java-version: '17'
 
-      # Cài đặt và khởi động emulator trước khi chạy test
+      # Cài đặt Android SDK và Emulator
       - name: Install Android SDK and Emulator
         run: |
-          sdkmanager --update
-          sdkmanager "system-images;android-30;google_apis;x86_64"
+          # Cài đặt Android SDK command line tools
+          wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O commandlinetools.zip
+          unzip commandlinetools.zip -d $HOME/android-sdk
+          rm commandlinetools.zip
+
+          # Cài đặt SDK components
+          yes | $HOME/android-sdk/cmdline-tools/bin/sdkmanager --licenses
+          $HOME/android-sdk/cmdline-tools/bin/sdkmanager "platform-tools" "emulator" "system-images;android-30;google_apis;x86_64"
+
+          # Thêm SDK vào PATH
+          export ANDROID_HOME=$HOME/android-sdk
+          export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools
 
       - name: Start emulator
         run: |
