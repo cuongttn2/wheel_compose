@@ -84,3 +84,5 @@ val wheelColors = listOf(
 val three_dimensional_edge_default = Color(0xFFCB7504)
 val btn_start_rps_background = Color(0xFFF5A53C)
 val btn_start_rps_text_color = Color(0xFF502291)
+val bg_language_selected = Color(0x4DB3E5FC)
+val bg_language_unselected = Color(0x00000000)

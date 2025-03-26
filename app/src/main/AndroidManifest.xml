@@ -74,6 +74,12 @@
             android:theme="@style/Theme.WheelCompose">
         </activity>
 
+        <activity
+            android:name=".ui.first_language.FirstLanguageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
     </application>
 
 </manifest>

@@ -34,5 +34,9 @@
     <string name="txt_intro_start">Start</string>
     <string name="txt_intro_next">Next</string>
     <string name="spin_play"><![CDATA[Spin & Play]]></string>
+    <string name="select_language">Select Language</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">Next</string>
 
 </resources>

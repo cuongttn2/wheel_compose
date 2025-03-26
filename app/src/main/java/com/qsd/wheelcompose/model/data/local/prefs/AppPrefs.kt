@@ -3,6 +3,7 @@ package com.qsd.wheelcompose.model.data.local.prefs
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
+import com.qsd.wheelcompose.utils.DEFAULT_LANGUAGE_CODE
 
 object AppPrefs {
     private lateinit var prefs: SharedPreferences
@@ -22,7 +23,7 @@ object AppPrefs {
         set(value) {
             prefs[APP_LANGUAGE] = value
         }
-        get() = prefs[APP_LANGUAGE, "en"] ?: "en"
+        get() = prefs[APP_LANGUAGE, DEFAULT_LANGUAGE_CODE] ?: DEFAULT_LANGUAGE_CODE
 
 
     private const val APP_LANGUAGE = "app_language_code"
