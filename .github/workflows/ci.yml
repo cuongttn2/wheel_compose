@@ -64,7 +64,7 @@ jobs:
 
   instrumentation-test:
     name: Perform Instrumentation Testing
-    needs: [unit-test]
+    needs: [ unit-test ]
     runs-on: macos-latest # MacOS runs faster
     steps:
       - name: Checkout the code
@@ -79,33 +79,44 @@ jobs:
       # Cài đặt Android SDK và Emulator
       - name: Install Android SDK and Emulator
         run: |
-#          Cài đặt Android SDK command line tools
+          # Cài đặt Android SDK command line tools
           wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O commandlinetools.zip
           unzip commandlinetools.zip -d $HOME/android-sdk
           rm commandlinetools.zip
 
-#          Thiết lập biến môi trường ANDROID_HOME và đường dẫn SDK
+          # Thiết lập biến môi trường ANDROID_HOME và đường dẫn SDK
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools
 
-#          Cài đặt SDK components
+          # Cài đặt SDK components
           yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager --licenses
           $ANDROID_HOME/cmdline-tools/bin/sdkmanager "platform-tools" "emulator" "system-images;android-30;google_apis;x86_64"
 
-#          Cập nhật đường dẫn SDK vào PATH
+          # Cập nhật đường dẫn SDK vào PATH
           export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
+          # Tải và cài đặt Android Emulator (nếu cần)
+          sdkmanager "system-images;android-30;google_apis;x86_64"
+
+      # Tạo AVD nếu chưa có
+      - name: Create Android AVD
+        run: |
+          echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -n my_avd_name -k "system-images;android-30;google_apis;x86_64" --force
+
+      # Khởi động Emulator
       - name: Start emulator
         run: |
           emulator -avd my_avd_name -no-window &
           adb wait-for-device
 
+      # Chạy espresso tests
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2 # 3rd party tool
         with:
           api-level: 30
           script: ./gradlew connectedCheck
 
+      # Tải lên báo cáo Instrumentation Test
       - name: Upload Instrumentation Test report
         uses: actions/upload-artifact@v4
         with:
