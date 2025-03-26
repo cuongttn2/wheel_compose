@@ -6,6 +6,9 @@ import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseViewModel
 import com.qsd.wheelcompose.model.data.local.prefs.AppPrefs
 import com.qsd.wheelcompose.model.data.local.ui.UILanguage
+import com.qsd.wheelcompose.ui.EventManager
+import com.qsd.wheelcompose.ui.EventManager.AppEvent
+import com.qsd.wheelcompose.ui.first_language.LanguageIntent.NavigateScreen
 import com.qsd.wheelcompose.ui.first_language.LanguageIntent.SelectLanguage
 import com.qsd.wheelcompose.ui.theme.bg_language_selected
 import com.qsd.wheelcompose.ui.theme.bg_language_unselected
@@ -72,7 +75,15 @@ class FirstLanguageViewModel @Inject constructor(@ApplicationContext private val
                 selectLanguage(intent.code)
             }
 
+            is NavigateScreen -> {
+                navigateScreen()
+            }
+
         }
+    }
+
+    private fun navigateScreen() {
+        EventManager.triggerEvent(AppEvent.NavigateScreen)
     }
 
     private fun selectLanguage(code: String) {

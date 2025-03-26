@@ -12,7 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FirstLanguageScreen(onNext: () -> Unit) {
+fun FirstLanguageScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -32,6 +32,6 @@ fun FirstLanguageScreen(onNext: () -> Unit) {
 @Composable
 @Preview()
 private fun Prev() {
-    FirstLanguageScreen { }
+    FirstLanguageScreen()
 }
 

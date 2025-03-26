@@ -85,11 +85,15 @@ abstract class BaseActivity<ViewModel : BaseViewModel> : ComponentActivity() {
                 ) { innerPaddingValues ->
                     Surface(modifier = Modifier.padding(innerPaddingValues)) {
                         BuiContent(savedInstanceState, snackBarHostState)
+                        ObserveEventFlow()
                     }
                 }
             }
         }
     }
+
+    @Composable
+    abstract fun ObserveEventFlow()
 
     override fun attachBaseContext(newBase: Context?) {
         val context = newBase?.createConfigurationContext(newBase.resources.configuration.apply {

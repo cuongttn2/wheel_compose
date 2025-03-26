@@ -7,15 +7,23 @@ import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.qsd.wheelcompose.base.BaseActivity
+import com.qsd.wheelcompose.ui.EventManager
+import com.qsd.wheelcompose.ui.EventManager.AppEvent
 import com.qsd.wheelcompose.ui.onboard.OnboardActivity
 import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
     override val viewModel: FirstLanguageViewModel by viewModels()
     override val titleTopBar: Int? = null
+
 
     @Composable
     override fun BuiContent(
@@ -25,10 +33,7 @@ class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
         CompositionLocalProvider(
             LocalViewModelProvider provides viewModel
         ) {
-            FirstLanguageScreen() {
-                OnboardActivity.start(this@FirstLanguageActivity)
-                finish()
-            }
+            FirstLanguageScreen()
         }
     }
 
@@ -37,6 +42,26 @@ class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
     }
 
     override fun init(savedInstanceState: Bundle?) {}
+
+    @Composable
+    override fun ObserveEventFlow() {
+        LaunchedEffect(EventManager) {
+            lifecycleScope.launch {
+                lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                    EventManager.eventsFlow.collect { event ->
+                        when (event) {
+                            is AppEvent.NavigateScreen -> {
+                                OnboardActivity.start(this@FirstLanguageActivity)
+                                finish()
+                            }
+
+                            else -> {}
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     companion object {
         fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
