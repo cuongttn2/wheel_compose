@@ -79,18 +79,21 @@ jobs:
       # Cài đặt Android SDK và Emulator
       - name: Install Android SDK and Emulator
         run: |
-          # Cài đặt Android SDK command line tools
+        # Cài đặt Android SDK command line tools
           wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O commandlinetools.zip
           unzip commandlinetools.zip -d $HOME/android-sdk
           rm commandlinetools.zip
 
-          # Cài đặt SDK components
-          yes | $HOME/android-sdk/cmdline-tools/bin/sdkmanager --licenses
-          $HOME/android-sdk/cmdline-tools/bin/sdkmanager "platform-tools" "emulator" "system-images;android-30;google_apis;x86_64"
-
-          # Thêm SDK vào PATH
+          # Thiết lập biến môi trường ANDROID_HOME và đường dẫn SDK
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools
+
+          # Cài đặt SDK components
+          yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager --licenses
+          $ANDROID_HOME/cmdline-tools/bin/sdkmanager "platform-tools" "emulator" "system-images;android-30;google_apis;x86_64"
+
+          # Cập nhật đường dẫn SDK vào PATH
+          export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
       - name: Start emulator
         run: |
