@@ -1,5 +1,6 @@
 package com.qsd.wheelcompose.utils
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSChoice
@@ -57,6 +58,33 @@ object Utils {
             RPSChoice.Rock.name -> if (choiceB == RPSChoice.Paper.name) "$nameP2\nWin" else "$nameP1\nWin"
             RPSChoice.Paper.name -> if (choiceB == RPSChoice.Scissors.name) "$nameP2\nWin" else "$nameP1\nWin"
             else -> ""
+        }
+    }
+
+    @Composable
+    fun getFlagResource(lang: String): Int {
+        return when (lang) {
+            "de" -> R.drawable.ic_flag_de
+            "es" -> R.drawable.ic_flag_es
+            "en" -> R.drawable.ic_flag_en
+            "pt" -> R.drawable.ic_flag_pt
+            "fr" -> R.drawable.ic_flag_fr
+            "hi" -> R.drawable.ic_flag_hi
+            "in" -> R.drawable.ic_flag_in
+            else -> R.drawable.ic_logo
+        }
+    }
+
+    fun getLanguageName(lang: String): String {
+        return when (lang) {
+            "de" -> "Deutsch"
+            "es" -> "Español"
+            "en" -> "English"
+            "pt" -> "Português"
+            "fr" -> "Français"
+            "hi" -> "हिन्दी"
+            "in" -> "Bahasa Indonesia"
+            else -> "Unknown"
         }
     }
 
