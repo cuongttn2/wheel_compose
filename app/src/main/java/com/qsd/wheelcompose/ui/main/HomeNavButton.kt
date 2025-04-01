@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.qsd.wheelcompose.model.data.local.ui.NavButtonItems
 import com.qsd.wheelcompose.ui.theme.typography
@@ -29,6 +30,6 @@ fun HomeNavButton(item: NavButtonItems, onClick: () -> Unit) {
                 .size(64.dp),
             painter = painterResource(item.icon), contentDescription = "button ${item.name}"
         )
-        Text(text = item.name, style = typography.bodySmall)
+        Text(text = item.name, style = typography.bodySmall, textAlign = TextAlign.Center)
     }
 }
