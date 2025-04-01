@@ -26,5 +26,7 @@ object EventManager {
     sealed class AppEvent {
         data class ShowSnackbar(@StringRes val message: Int) : AppEvent()
         data object NavigateScreen : AppEvent()
+        data object RefreshAppLanguage : AppEvent()
+
     }
 }

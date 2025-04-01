@@ -35,6 +35,7 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.WheelCompose">
         </activity>
 
@@ -75,7 +76,13 @@
         </activity>
 
         <activity
-            android:name=".ui.first_language.FirstLanguageActivity"
+            android:name=".ui.language.language_first.LanguageFirstActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.language.language_settings.LanguageSettingActivity"
             android:exported="false"
             android:theme="@style/Theme.WheelCompose">
         </activity>

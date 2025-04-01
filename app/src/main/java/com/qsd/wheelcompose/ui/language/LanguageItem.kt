@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.first_language
+package com.qsd.wheelcompose.ui.language
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,26 +17,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.model.data.local.ui.UILanguage
-import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import com.qsd.wheelcompose.utils.Utils.getLanguageName
 
 @Composable
-fun LanguageItem(item: UILanguage) {
-    val viewModel = LocalViewModelProvider.current as FirstLanguageViewModel
+fun LanguageItem(
+    item: UILanguage,
+    onSelect: (String) -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                viewModel.handleIntent(LanguageIntent.SelectLanguage(item.code))
+                onSelect(item.code)
             }
             .background(item.background)
             .padding(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_logo),
+            painter = painterResource(id = item.flag),
             contentDescription = item.code,
             contentScale = ContentScale.Fit,
             modifier = Modifier

@@ -7,7 +7,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import com.qsd.wheelcompose.base.BaseActivity
-import com.qsd.wheelcompose.ui.first_language.FirstLanguageActivity
+import com.qsd.wheelcompose.ui.language.language_first.LanguageFirstActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
@@ -26,7 +26,7 @@ class SplashActivity : BaseActivity<SplashViewModel>() {
         SplashScreen()
         LaunchedEffect(Unit) {
             delay(3000)
-            FirstLanguageActivity.start(this@SplashActivity)
+            LanguageFirstActivity.start(this@SplashActivity)
             finish()
         }
     }

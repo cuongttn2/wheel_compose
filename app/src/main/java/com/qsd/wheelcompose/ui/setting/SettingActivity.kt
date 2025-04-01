@@ -10,6 +10,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
 import com.qsd.wheelcompose.ui.about.AboutAppActivity
+import com.qsd.wheelcompose.ui.language.language_settings.LanguageSettingActivity
 import com.qsd.wheelcompose.ui.privacy.PrivacyActivity
 import com.qsd.wheelcompose.ui.sound_setting.SoundSettingActivity
 import com.qsd.wheelcompose.ui.widget.NavBackIcon
@@ -68,6 +69,10 @@ class SettingActivity : BaseActivity<SettingViewModel>() {
         when (screenId) {
             SettingNavButtonID.Sound.ordinal -> {
                 SoundSettingActivity.start(this@SettingActivity)
+            }
+
+            SettingNavButtonID.Language.ordinal -> {
+                LanguageSettingActivity.start(this@SettingActivity)
             }
 
             SettingNavButtonID.About.ordinal -> {

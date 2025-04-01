@@ -22,6 +22,7 @@
     <string name="setting_btn_about">About App</string>
     <string name="setting_btn_privacy">Privacy</string>
     <string name="setting_btn_sound">Sound Setting</string>
+    <string name="setting_btn_language">Language Setting</string>
     <string name="start">Start</string>
 
     <!--  Onboard Screen  -->
@@ -38,8 +39,15 @@
 
     <!--  Onboard Screen  -->
     <string name="txt_first_language_next">Next</string>
+
+    <!--  Privacy Screen  -->
     <string name="unable_to_load_content">Unable to load content.</string>
     <string name="check_network_connection_and_try_again">Please check your network connection and try again.</string>
     <string name="retry">Retry</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">App Language</string>
+    <string name="done_select_language">Done</string>
+
 
 </resources>
