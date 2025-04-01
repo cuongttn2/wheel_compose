@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WheelCompose</string>
+    <string name="app_name">Lucky Spin</string>
 
     <!--  Title Screen  -->
     <string name="settings">Settings</string>
@@ -38,5 +38,8 @@
 
     <!--  Onboard Screen  -->
     <string name="txt_first_language_next">Next</string>
+    <string name="unable_to_load_content">Unable to load content.</string>
+    <string name="check_network_connection_and_try_again">Please check your network connection and try again.</string>
+    <string name="retry">Retry</string>
 
 </resources>
