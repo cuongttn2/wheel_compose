@@ -1,6 +1,7 @@
 package com.qsd.wheelcompose.ui.rock_paper_scissors
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -42,6 +43,7 @@ fun GameScreen() {
     val finalChoiceP1 = uiState.value.finalChoiceP1
     val finalChoiceP2 = uiState.value.finalChoiceP2
     val resultName = uiState.value.resultName
+    val volumeOn = uiState.value.volumeOn
     Column(
         modifier = Modifier
             .fillMaxSize(),
@@ -56,9 +58,15 @@ fun GameScreen() {
             horizontalArrangement = Arrangement.End
         ) {
             Icon(
-                modifier = Modifier.size(32.dp),
-                painter = painterResource(R.drawable.ic_volume_off),
-                contentDescription = "volume"
+                modifier = Modifier
+                    .size(32.dp)
+                    .clickable {
+                        viewModel.handleIntent(RPSIntent.ToggleVolume)
+                    },
+                painter = painterResource(
+                    id = if (volumeOn) R.drawable.ic_volume_on else R.drawable.ic_volume_off
+                ),
+                contentDescription = "Toggle volume"
             )
         }
 

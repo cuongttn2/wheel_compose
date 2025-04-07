@@ -25,7 +25,20 @@ object AppPrefs {
         }
         get() = prefs[APP_LANGUAGE, DEFAULT_LANGUAGE_CODE] ?: DEFAULT_LANGUAGE_CODE
 
+    var isWheelSoundEnabled: Boolean
+        set(value) {
+            prefs[WHEEL_SOUND] = value
+        }
+        get() = prefs[WHEEL_SOUND, false] ?: false
+
+    var isRpsSoundEnabled: Boolean
+        set(value) {
+            prefs[RPG_SOUND] = value
+        }
+        get() = prefs[RPG_SOUND, false] ?: false
 
     private const val APP_LANGUAGE = "app_language_code"
+    private const val WHEEL_SOUND = "is_wheel_sound_enabled"
+    private const val RPG_SOUND = "is_rps_sound_enabled"
 
 }
