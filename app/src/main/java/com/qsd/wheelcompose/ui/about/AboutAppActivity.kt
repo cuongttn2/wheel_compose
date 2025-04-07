@@ -8,7 +8,6 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
-import com.qsd.wheelcompose.ui.widget.Greeting
 import com.qsd.wheelcompose.ui.widget.NavBackIcon
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,7 +21,7 @@ class AboutAppActivity : BaseActivity<AboutAppViewModel>() {
         savedInstanceState: Bundle?,
         snackBarHostState: SnackbarHostState,
     ) {
-        Greeting("Screen") {}
+        AboutAppScreen()
     }
 
     override fun navigationIcon(): @Composable (() -> Unit) {
