@@ -7,14 +7,15 @@ import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.core.net.toUri
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
 import com.qsd.wheelcompose.ui.about.AboutAppActivity
 import com.qsd.wheelcompose.ui.language.language_settings.LanguageSettingActivity
-import com.qsd.wheelcompose.ui.privacy.PrivacyActivity
 import com.qsd.wheelcompose.ui.sound_setting.SoundSettingActivity
 import com.qsd.wheelcompose.ui.widget.NavBackIcon
 import com.qsd.wheelcompose.utils.LocalViewModelProvider
+import com.qsd.wheelcompose.utils.POLICY_URL
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -80,7 +81,8 @@ class SettingActivity : BaseActivity<SettingViewModel>() {
             }
 
             SettingNavButtonID.Privacy.ordinal -> {
-                PrivacyActivity.start(this@SettingActivity)
+                val intent = Intent(Intent.ACTION_VIEW, POLICY_URL.toUri())
+                startActivity(intent)
             }
         }
     }

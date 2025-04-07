@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".ui.App"
         android:allowBackup="true"
@@ -65,12 +67,6 @@
 
         <activity
             android:name=".ui.about.AboutAppActivity"
-            android:exported="false"
-            android:theme="@style/Theme.WheelCompose">
-        </activity>
-
-        <activity
-            android:name=".ui.privacy.PrivacyActivity"
             android:exported="false"
             android:theme="@style/Theme.WheelCompose">
         </activity>
