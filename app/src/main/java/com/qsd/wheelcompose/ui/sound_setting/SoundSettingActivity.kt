@@ -6,10 +6,11 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
-import com.qsd.wheelcompose.ui.widget.Greeting
 import com.qsd.wheelcompose.ui.widget.NavBackIcon
+import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +23,11 @@ class SoundSettingActivity : BaseActivity<SoundSettingViewModel>() {
         savedInstanceState: Bundle?,
         snackBarHostState: SnackbarHostState,
     ) {
-        Greeting("Screen") {}
+        CompositionLocalProvider(
+            LocalViewModelProvider provides viewModel
+        ) {
+            SoundSettingScreen()
+        }
     }
 
     override fun navigationIcon(): @Composable (() -> Unit) {

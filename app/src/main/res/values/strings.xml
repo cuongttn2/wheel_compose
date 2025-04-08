@@ -54,6 +54,8 @@
     <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
     <string name="feedback_on">Feedback on %1$s</string>
     <string name="contact_the_developer">Contact the developer</string>
+    <string name="enable_sound_for_rps">Enable sound for Rock Paper Scissors</string>
+    <string name="enable_sound_for_wheel">Enable sound for Wheel</string>
 
 
 </resources>
