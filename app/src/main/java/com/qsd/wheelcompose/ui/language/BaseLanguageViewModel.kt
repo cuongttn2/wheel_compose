@@ -65,7 +65,6 @@ abstract class BaseLanguageViewModel(
                 background = if (it.code == code) bg_language_selected else bg_language_unselected
             )
         }
-        AppPrefs.language = code
         _state.update { it.copy(languages = updated) }
     }
 }
