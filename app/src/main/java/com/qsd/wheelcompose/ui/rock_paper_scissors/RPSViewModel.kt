@@ -2,8 +2,9 @@ package com.qsd.wheelcompose.ui.rock_paper_scissors
 
 import androidx.lifecycle.viewModelScope
 import com.qsd.wheelcompose.base.BaseViewModel
-import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.HideResultDialog
+import com.qsd.wheelcompose.model.data.local.prefs.AppPrefs
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.HideFirework
+import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.HideResultDialog
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.NameP1Change
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.NameP2Change
 import com.qsd.wheelcompose.ui.rock_paper_scissors.RPSIntent.StartPlay
@@ -44,6 +45,10 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
                 hideDialogResult()
             }
 
+            is RPSIntent.ToggleVolume -> {
+                toggleVolume()
+            }
+
         }
     }
 
@@ -58,9 +63,11 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
     private fun playGame() {
         if (_state.value.isPlaying) return
         viewModelScope.launch(Dispatchers.Main) {
+            // Reset UI state khi bắt đầu chơi
             _state.update {
                 it.copy(
                     isPlaying = true,
+                    isPlaySound = true,
                     resultName = null,
                     playFirework = false
                 )
@@ -91,6 +98,7 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
                 it.copy(
                     isPlaying = false,
                     playFirework = true,
+                    isPlaySound = false,
                     showResult = true,
                     resultName = getGameResult(
                         it.finalChoiceP1,
@@ -109,6 +117,11 @@ class RPSViewModel @Inject constructor() : BaseViewModel() {
 
     private fun hideDialogResult() {
         _state.update { it.copy(showResult = false) }
+    }
+
+    private fun toggleVolume() {
+        AppPrefs.isRpsSoundEnabled = !AppPrefs.isRpsSoundEnabled
+        _state.update { it.copy(volumeOn = AppPrefs.isRpsSoundEnabled) }
     }
 
 }

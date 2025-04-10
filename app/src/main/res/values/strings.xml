@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WheelCompose</string>
+    <string name="app_name">Lucky Spin</string>
 
     <!--  Title Screen  -->
     <string name="settings">Settings</string>
@@ -22,6 +22,7 @@
     <string name="setting_btn_about">About App</string>
     <string name="setting_btn_privacy">Privacy</string>
     <string name="setting_btn_sound">Sound Setting</string>
+    <string name="setting_btn_language">Language Setting</string>
     <string name="start">Start</string>
 
     <!--  Onboard Screen  -->
@@ -38,5 +39,23 @@
 
     <!--  Onboard Screen  -->
     <string name="txt_first_language_next">Next</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">Unable to load content.</string>
+    <string name="check_network_connection_and_try_again">Please check your network connection and try again.</string>
+    <string name="retry">Retry</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">App Language</string>
+    <string name="done_select_language">Done</string>
+    <string name="version">"Version: "</string>
+    <string name="app_about_desc">The app helps you make fun choices with lucky spins and rock-paper-scissors games!</string>
+    <string name="privacy_and_policy">Privacy and Policy</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">Feedback on %1$s</string>
+    <string name="contact_the_developer">Contact the developer</string>
+    <string name="enable_sound_for_rps">Enable sound for Rock Paper Scissors</string>
+    <string name="enable_sound_for_wheel">Enable sound for Wheel</string>
+
 
 </resources>

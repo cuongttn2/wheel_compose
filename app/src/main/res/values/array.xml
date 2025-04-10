@@ -15,12 +15,14 @@
 
     <integer-array name="setting_nav_btn_icon">
         <item>@drawable/ic_btn_sound</item>
+        <item>@drawable/ic_btn_language</item>
         <item>@drawable/ic_btn_about</item>
         <item>@drawable/ic_btn_privacy</item>
     </integer-array>
 
     <string-array name="setting_nav_btn_name">
         <item>@string/setting_btn_sound</item>
+        <item>@string/setting_btn_language</item>
         <item>@string/setting_btn_about</item>
         <item>@string/setting_btn_privacy</item>
     </string-array>

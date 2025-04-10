@@ -1,6 +1,6 @@
 [versions]
 accompanistDrawablepainter = "0.32.0"
-agp = "8.9.0"
+agp = "8.9.1"
 kotlin = "2.1.10"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -8,7 +8,7 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
-composeBom = "2025.03.00"
+composeBom = "2025.03.01"
 constraintlayout = "1.1.1"
 hilt = "2.53.1"
 hiltExt = "1.2.0"
@@ -21,7 +21,7 @@ room = "2.6.1"
 security-crypto = "1.0.0"
 ksp = "2.1.10-1.0.31"
 dimen = "1.1.0"
-userMessagingPlatform = "3.1.0"
+userMessagingPlatform = "3.2.0"
 
 [libraries]
 accompanist-drawablepainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanistDrawablepainter" }

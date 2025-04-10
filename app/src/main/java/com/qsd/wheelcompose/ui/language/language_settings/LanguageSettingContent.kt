@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.first_language
+package com.qsd.wheelcompose.ui.language.language_settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,13 +17,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.qsd.wheelcompose.R
+import com.qsd.wheelcompose.ui.language.LanguageIntent
+import com.qsd.wheelcompose.ui.language.LanguageItem
 import com.qsd.wheelcompose.utils.LocalViewModelProvider
 
 @Composable
-fun LanguageContent(
+fun LanguageSettingContent(
     modifier: Modifier = Modifier,
 ) {
-    val viewModel = LocalViewModelProvider.current as FirstLanguageViewModel
+    val viewModel = LocalViewModelProvider.current as LanguageSettingViewModel
     val uiState = viewModel.state.collectAsState()
     Column(
         modifier = modifier
@@ -36,19 +38,23 @@ fun LanguageContent(
                 .fillMaxWidth()
                 .weight(1f),
         ) {
-            itemsIndexed(items = uiState.value.languages, key = { index, item -> item.id }) { _, item ->
-                LanguageItem(item)
+            itemsIndexed(
+                items = uiState.value.languages,
+                key = { index, item -> item.id }) { _, item ->
+                LanguageItem(item) {
+                    viewModel.handleIntent(LanguageIntent.SelectLanguage(it))
+                }
             }
         }
 
         Spacer(modifier = Modifier.height(24.dp))
         Button(
             onClick = {
-                viewModel.handleIntent(LanguageIntent.NavigateScreen)
+                viewModel.handleIntent(LanguageIntent.RefreshLanguage)
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = stringResource(R.string.txt_first_language_next))
+            Text(text = stringResource(R.string.done_select_language))
         }
     }
 }

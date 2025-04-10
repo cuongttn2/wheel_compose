@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.first_language
+package com.qsd.wheelcompose.ui.language.language_first
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,7 +20,7 @@ fun FirstLanguageScreen() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LanguageContent(
+        FirstLanguageContent(
             modifier = Modifier.weight(7f)
         )
 

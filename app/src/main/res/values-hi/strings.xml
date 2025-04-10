@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucky Spin</string>
+    <!--  Title Screen  -->
+    <string name="settings">सेटिंग्स</string>
+    <string name="about_app">ऐप के बारे में</string>
+    <string name="home">होम</string>
+    <string name="privacy">गोपनीयता</string>
+    <string name="rock_paper_scissors">रॉक पेपर सिज़र्स</string>
+    <string name="sound_settings">ध्वनि सेटिंग्स</string>
+    <string name="wheel">व्हील</string>
+
+    <!--  Wheel Screen  -->
+    <string name="input_name">नाम दर्ज करें</string>
+
+    <!--  Home Screen  -->
+    <string name="home_btn_wheel">नामों का व्हील</string>
+    <string name="home_btn_rock_hand">रॉक पेपर सिज़र्स</string>
+    <string name="home_btn_setting">सेटिंग्स</string>
+
+    <!--  Home Screen  -->
+    <string name="setting_btn_about">ऐप के बारे में</string>
+    <string name="setting_btn_privacy">गोपनीयता</string>
+    <string name="setting_btn_sound">ध्वनि सेटिंग</string>
+    <string name="setting_btn_language">भाषा सेटिंग</string>
+    <string name="start">शुरू करें</string>
+
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">अपनी यात्रा शुरू करें</string>
+    <string name="txt_intro_rock_paper_scissors">रॉक पेपर सिज़र्स</string>
+    <string name="txt_intro_lucky_wheel">व्हील ऑफ फॉर्च्यून</string>
+    <string name="txt_intro_rps_description">अपना रोल चुनें और भाग्य पर छोड़ दें! प्रत्येक खिलाड़ी को केवल दो गेम रोल में से एक चुनना है, फिर ऐप यादृच्छिक रूप से विजेता चुन देगा। देखें कि क्या आपकी रणनीति आपको हँसी का मजा दे सकती है!</string>
+    <string name="txt_intro_explore_your_game">अपने गेम की खोज करें!</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">व्हील के साथ अपना सौभाग्य आज़माएँ!</string>
+    <string name="txt_intro_start">शुरू करें</string>
+    <string name="txt_intro_next">अगला</string>
+    <string name="spin_play"><![CDATA[स्पिन &amp; प्ले]]></string>
+    <string name="select_language">भाषा चुनें</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">अगला</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">सामग्री लोड नहीं की जा सकी।</string>
+    <string name="check_network_connection_and_try_again">कृपया अपना नेटवर्क कनेक्शन जांचें और पुनः प्रयास करें।</string>
+    <string name="retry">फिर से प्रयास करें</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">ऐप की भाषा</string>
+    <string name="done_select_language">समाप्त</string>
+    <string name="version">"संस्करण: "</string>
+    <string name="app_about_desc">यह ऐप आपको लकी स्पिन और रॉक पेपर सिज़र्स गेम्स के साथ मज़ेदार विकल्प चुनने में मदद करता है!</string>
+    <string name="privacy_and_policy">गोपनीयता और नीति</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">%1$s पर प्रतिक्रिया</string>
+    <string name="contact_the_developer">डेवलपर से संपर्क करें</string>
+    <string name="enable_sound_for_rps">रॉक पेपर सिज़र्स के लिए ध्वनि सक्षम करें</string>
+    <string name="enable_sound_for_wheel">व्हील के लिए ध्वनि सक्षम करें</string>
+</resources>

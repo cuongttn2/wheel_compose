@@ -1,6 +1,7 @@
 package com.qsd.wheelcompose.ui.wheel
 
 import com.qsd.wheelcompose.base.BaseViewModel
+import com.qsd.wheelcompose.model.data.local.prefs.AppPrefs
 import com.qsd.wheelcompose.ui.wheel.WheelIntent.ClearDefaultNames
 import com.qsd.wheelcompose.ui.wheel.WheelIntent.HandleWheelResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -40,12 +41,28 @@ class WheelViewModel @Inject constructor() : BaseViewModel() {
                 handleVisibleNamesField(intent.visible)
             }
 
+            is WheelIntent.StartSpin -> startSpin()
+            is WheelIntent.ToggleVolume -> toggleVolume()
+
+        }
+    }
+
+    private fun startSpin() {
+        _state.update {
+            it.copy(isPlaySound = true)
+        }
+    }
+
+    private fun toggleVolume() {
+        AppPrefs.isWheelSoundEnabled = !AppPrefs.isWheelSoundEnabled
+        _state.update {
+            it.copy(volumeOn = AppPrefs.isWheelSoundEnabled)
         }
     }
 
     private fun handleWheelResult(name: String) {
         _state.update {
-            it.copy(resultName = name, playFirework = true)
+            it.copy(resultName = name, playFirework = true, isPlaySound = false)
         }
     }
 

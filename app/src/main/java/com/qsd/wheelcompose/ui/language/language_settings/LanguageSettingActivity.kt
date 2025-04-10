@@ -1,4 +1,4 @@
-package com.qsd.wheelcompose.ui.first_language
+package com.qsd.wheelcompose.ui.language.language_settings
 
 import android.content.Context
 import android.content.Intent
@@ -11,37 +11,42 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.qsd.wheelcompose.R
 import com.qsd.wheelcompose.base.BaseActivity
 import com.qsd.wheelcompose.ui.EventManager
 import com.qsd.wheelcompose.ui.EventManager.AppEvent
-import com.qsd.wheelcompose.ui.onboard.OnboardActivity
+import com.qsd.wheelcompose.ui.main.MainActivity
+import com.qsd.wheelcompose.ui.widget.NavBackIcon
 import com.qsd.wheelcompose.utils.LocalViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
-    override val viewModel: FirstLanguageViewModel by viewModels()
-    override val titleTopBar: Int? = null
-
+class LanguageSettingActivity : BaseActivity<LanguageSettingViewModel>() {
+    override val viewModel: LanguageSettingViewModel by viewModels<LanguageSettingViewModel>()
+    override val titleTopBar: Int = R.string.app_language
 
     @Composable
     override fun BuiContent(
         savedInstanceState: Bundle?,
-        snackBarHostState: SnackbarHostState,
+        snackBarHostState: SnackbarHostState
     ) {
         CompositionLocalProvider(
             LocalViewModelProvider provides viewModel
         ) {
-            FirstLanguageScreen()
+            LanguageSettingScreen()
         }
     }
 
     override fun navigationIcon(): @Composable (() -> Unit) {
-        return {}
+        return {
+            NavBackIcon { finish() }
+        }
     }
 
-    override fun init(savedInstanceState: Bundle?) {}
+    override fun init(savedInstanceState: Bundle?) {
+
+    }
 
     @Composable
     override fun ObserveEventFlow() {
@@ -50,9 +55,10 @@ class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
                 lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                     EventManager.eventsFlow.collect { event ->
                         when (event) {
-                            is AppEvent.NavigateScreen -> {
-                                OnboardActivity.start(this@FirstLanguageActivity)
-                                finish()
+                            is AppEvent.RefreshAppLanguage -> {
+                                val flags =
+                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                MainActivity.start(this@LanguageSettingActivity, flags = flags)
                             }
 
                             else -> {}
@@ -65,7 +71,7 @@ class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
 
     companion object {
         fun start(context: Context, bundle: Bundle? = null, flags: Int? = null) {
-            val intent = Intent(context, FirstLanguageActivity::class.java)
+            val intent = Intent(context, LanguageSettingActivity::class.java)
             bundle?.let {
                 intent.putExtras(it)
             }
@@ -75,5 +81,6 @@ class FirstLanguageActivity : BaseActivity<FirstLanguageViewModel>() {
             context.startActivity(intent)
         }
     }
+
 
 }

@@ -1,5 +1,7 @@
 package com.qsd.wheelcompose.ui.rock_paper_scissors
 
+import com.qsd.wheelcompose.model.data.local.prefs.AppPrefs
+
 data class UIStateRPS(
     val rpsList: List<String> = listOf(
         RPSChoice.Scissors.name,
@@ -10,6 +12,8 @@ data class UIStateRPS(
     val nameP2: String = "P2",
     val resultName: String? = null,
     val showResult: Boolean = false,
+    val isPlaySound: Boolean = false,
+    val volumeOn: Boolean = AppPrefs.isRpsSoundEnabled,
     val isPlaying: Boolean = false,
     val playFirework: Boolean = false,
     val currentIndexP1: Int = 0,
