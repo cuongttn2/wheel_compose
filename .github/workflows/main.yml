@@ -18,12 +18,13 @@ jobs:
       - name: Run Lint
         run: ./gradlew lint
 
-      - name: Find lint report
-        run: find app/build/reports/ -name "*.html"
-
       - name: Upload lint report
         uses: actions/upload-artifact@v4.6.2
         with:
           name: lint-report
           path: app/build/reports/*.html
 
+      - name: Add lint report to job summary
+        run: |
+          echo "### 🔍 Lint Report" >> $GITHUB_STEP_SUMMARY
+          echo "➡️ [Download Lint Report](./artifact/lint-report)" >> $GITHUB_STEP_SUMMARY  
