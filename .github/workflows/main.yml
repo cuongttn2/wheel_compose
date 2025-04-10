@@ -19,15 +19,25 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'  # hoặc version Java bạn đang dùng
+          java-version: '17'  # Hoặc version bạn đang dùng
 
       - name: Run lint
-        run: ./gradlew lint  # hoặc lintProdDebug tuỳ variant bạn muốn
+        run: ./gradlew lintDebug  # Hoặc lintProdDebug tuỳ project của bạn
 
       - name: Prepare lint report for GitHub Pages
         run: |
           mkdir -p ./lint-report
           cp -r ./app/build/reports/* ./lint-report/
+
+      - name: Generate index.html for lint reports
+        run: |
+          REPORT_DIR=./lint-report
+          echo "<!DOCTYPE html><html><head><title>Lint Reports</title></head><body><h1>Available Lint Reports</h1><ul>" > $REPORT_DIR/index.html
+          for report in $REPORT_DIR/*.html; do
+            filename=$(basename $report)
+            echo "<li><a href=\"$filename\">$filename</a></li>" >> $REPORT_DIR/index.html
+          done
+          echo "</ul></body></html>" >> $REPORT_DIR/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -38,4 +48,4 @@ jobs:
       - name: Add link to GitHub Pages report in job summary
         run: |
           echo "### 🔍 Lint Report" >> $GITHUB_STEP_SUMMARY
-          echo "➡️ [View Lint Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/lint-results-debug.html)" >> $GITHUB_STEP_SUMMARY
+          echo "➡️ [View Lint Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)" >> $GITHUB_STEP_SUMMARY
