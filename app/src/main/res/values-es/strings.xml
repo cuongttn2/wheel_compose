@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucky Spin</string>
+    <!--  Title Screen  -->
+    <string name="settings">Ajustes</string>
+    <string name="about_app">Acerca de la aplicación</string>
+    <string name="home">Inicio</string>
+    <string name="privacy">Privacidad</string>
+    <string name="rock_paper_scissors">Piedra, Papel y Tijera</string>
+    <string name="sound_settings">Ajustes de sonido</string>
+    <string name="wheel">Rueda</string>
+
+    <!--  Wheel Screen  -->
+    <string name="input_name">Ingresa el nombre</string>
+
+    <!--  Home Screen  -->
+    <string name="home_btn_wheel">Rueda de nombres</string>
+    <string name="home_btn_rock_hand">Piedra, Papel y Tijera</string>
+    <string name="home_btn_setting">Ajustes</string>
+
+    <!--  Home Screen  -->
+    <string name="setting_btn_about">Acerca de la aplicación</string>
+    <string name="setting_btn_privacy">Privacidad</string>
+    <string name="setting_btn_sound">Ajustes de sonido</string>
+    <string name="setting_btn_language">Ajustes de idioma</string>
+    <string name="start">Iniciar</string>
+
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">Comienza tu viaje</string>
+    <string name="txt_intro_rock_paper_scissors">Piedra, Papel y Tijera</string>
+    <string name="txt_intro_lucky_wheel">Rueda de la Fortuna</string>
+    <string name="txt_intro_rps_description">¡Elige tu rol y deja que la suerte decida! Cada jugador solo necesita escoger uno de los dos roles del juego, luego la aplicación seleccionará un ganador al azar. ¡Descubre si tu estrategia te hará reír!</string>
+    <string name="txt_intro_explore_your_game">¡Explora tu juego!</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">¡Prueba tu suerte con la rueda!</string>
+    <string name="txt_intro_start">Iniciar</string>
+    <string name="txt_intro_next">Siguiente</string>
+    <string name="spin_play"><![CDATA[Girar &amp; Jugar]]></string>
+    <string name="select_language">Selecciona el idioma</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">Siguiente</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">No se pudo cargar el contenido.</string>
+    <string name="check_network_connection_and_try_again">Por favor, revisa tu conexión a internet y vuelve a intentarlo.</string>
+    <string name="retry">Reintentar</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">Idioma de la aplicación</string>
+    <string name="done_select_language">Listo</string>
+    <string name="version">"Versión: "</string>
+    <string name="app_about_desc">¡La aplicación te ayuda a tomar decisiones divertidas con giros de la suerte y juegos de piedra, papel y tijera!</string>
+    <string name="privacy_and_policy">Política de Privacidad</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">Comentarios en %1$s</string>
+    <string name="contact_the_developer">Contacta al desarrollador</string>
+    <string name="enable_sound_for_rps">Activar sonido para Piedra, Papel y Tijera</string>
+    <string name="enable_sound_for_wheel">Activar sonido para la rueda</string>
+</resources>

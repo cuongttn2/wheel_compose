@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucky Spin</string>
+
+    <!--  Title Screen  -->
+    <string name="settings">Paramètres</string>
+    <string name="about_app">À propos de l\'application</string>
+    <string name="home">Accueil</string>
+    <string name="privacy">Confidentialité</string>
+    <string name="rock_paper_scissors">Pierre-Papier-Ciseaux</string>
+    <string name="sound_settings">Paramètres audio</string>
+    <string name="wheel">Roue</string>
+
+    <!--  Wheel Screen  -->
+    <string name="input_name">Entrez le nom</string>
+
+    <!--  Home Screen  -->
+    <string name="home_btn_wheel">Roue des noms</string>
+    <string name="home_btn_rock_hand">Pierre-Papier-Ciseaux</string>
+    <string name="home_btn_setting">Paramètres</string>
+
+    <!--  Home Screen  -->
+    <string name="setting_btn_about">À propos de l\'application</string>
+    <string name="setting_btn_privacy">Confidentialité</string>
+    <string name="setting_btn_sound">Paramètres sonores</string>
+    <string name="setting_btn_language">Paramètres de langue</string>
+    <string name="start">Démarrer</string>
+
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">Commencez votre voyage</string>
+    <string name="txt_intro_rock_paper_scissors">Pierre-Papier-Ciseaux</string>
+    <string name="txt_intro_lucky_wheel">Roue de la Fortune</string>
+    <string name="txt_intro_rps_description">Choisissez votre rôle et laissez la chance décider ! Chaque joueur n\'a qu\'à choisir l\'un des deux rôles du jeu, puis l\'application sélectionnera un gagnant au hasard. Voyez si votre stratégie peut vous faire rire !</string>
+    <string name="txt_intro_explore_your_game">Explorez votre jeu !</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">Tentez votre chance avec la roue !</string>
+    <string name="txt_intro_start">Démarrer</string>
+    <string name="txt_intro_next">Suivant</string>
+    <string name="spin_play"><![CDATA[Tourner &amp; Jouer]]></string>
+    <string name="select_language">Sélectionnez la langue</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">Suivant</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">Impossible de charger le contenu.</string>
+    <string name="check_network_connection_and_try_again">Veuillez vérifier votre connexion réseau et réessayer.</string>
+    <string name="retry">Réessayer</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">Langue de l\'application</string>
+    <string name="done_select_language">Terminé</string>
+    <string name="version">"Version: "</string>
+    <string name="app_about_desc">L\'application vous aide à faire des choix amusants avec des tours de chance et des jeux de pierre-papier-ciseaux !</string>
+    <string name="privacy_and_policy">Politique de Confidentialité</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">Feedback sur %1$s</string>
+    <string name="contact_the_developer">Contacter le développeur</string>
+    <string name="enable_sound_for_rps">Activer le son pour Pierre-Papier-Ciseaux</string>
+    <string name="enable_sound_for_wheel">Activer le son pour la roue</string>
+</resources>

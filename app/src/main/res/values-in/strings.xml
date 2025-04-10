@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucky Spin</string>
+    <!--  Title Screen  -->
+    <string name="settings">Pengaturan</string>
+    <string name="about_app">Tentang Aplikasi</string>
+    <string name="home">Beranda</string>
+    <string name="privacy">Privasi</string>
+    <string name="rock_paper_scissors">Batu, Gunting, Kertas</string>
+    <string name="sound_settings">Pengaturan Suara</string>
+    <string name="wheel">Roda</string>
+
+    <!--  Wheel Screen  -->
+    <string name="input_name">Masukkan nama</string>
+
+    <!--  Home Screen  -->
+    <string name="home_btn_wheel">Roda Nama</string>
+    <string name="home_btn_rock_hand">Batu, Gunting, Kertas</string>
+    <string name="home_btn_setting">Pengaturan</string>
+
+    <!--  Home Screen  -->
+    <string name="setting_btn_about">Tentang Aplikasi</string>
+    <string name="setting_btn_privacy">Privasi</string>
+    <string name="setting_btn_sound">Pengaturan Suara</string>
+    <string name="setting_btn_language">Pengaturan Bahasa</string>
+    <string name="start">Mulai</string>
+
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">Mulai perjalananmu</string>
+    <string name="txt_intro_rock_paper_scissors">Batu, Gunting, Kertas</string>
+    <string name="txt_intro_lucky_wheel">Roda Keberuntungan</string>
+    <string name="txt_intro_rps_description">Pilih peranmu dan biarkan keberuntungan menentukan! Setiap pemain hanya perlu memilih salah satu dari dua peran permainan, lalu aplikasi akan memilih pemenang secara acak. Lihat apakah strategimu bisa membuatmu tertawa!</string>
+    <string name="txt_intro_explore_your_game">Jelajahi permainanmu!</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">Coba keberuntunganmu dengan roda!</string>
+    <string name="txt_intro_start">Mulai</string>
+    <string name="txt_intro_next">Berikutnya</string>
+    <string name="spin_play"><![CDATA[Putar &amp; Mainkan]]></string>
+    <string name="select_language">Pilih Bahasa</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">Berikutnya</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">Tidak dapat memuat konten.</string>
+    <string name="check_network_connection_and_try_again">Silakan periksa koneksi jaringan Anda dan coba lagi.</string>
+    <string name="retry">Coba Lagi</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">Bahasa Aplikasi</string>
+    <string name="done_select_language">Selesai</string>
+    <string name="version">"Versi: "</string>
+    <string name="app_about_desc">Aplikasi ini membantu Anda membuat pilihan yang menyenangkan dengan putaran keberuntungan dan permainan batu, gunting, kertas!</string>
+    <string name="privacy_and_policy">Kebijakan Privasi</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">Umpan balik di %1$s</string>
+    <string name="contact_the_developer">Hubungi pengembang</string>
+    <string name="enable_sound_for_rps">Aktifkan suara untuk Batu, Gunting, Kertas</string>
+    <string name="enable_sound_for_wheel">Aktifkan suara untuk Roda</string>
+</resources>

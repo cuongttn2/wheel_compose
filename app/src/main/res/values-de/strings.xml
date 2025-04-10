@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucky Spin</string>
+    <!--  Title Screen  -->
+    <string name="settings">Einstellungen</string>
+    <string name="about_app">Über die App</string>
+    <string name="home">Startseite</string>
+    <string name="privacy">Datenschutz</string>
+    <string name="rock_paper_scissors">Schere Stein Papier</string>
+    <string name="sound_settings">Toneinstellungen</string>
+    <string name="wheel">Rad</string>
+
+    <!--  Wheel Screen  -->
+    <string name="input_name">Name eingeben</string>
+
+    <!--  Home Screen  -->
+    <string name="home_btn_wheel">Namensrad</string>
+    <string name="home_btn_rock_hand">Schere Stein Papier</string>
+    <string name="home_btn_setting">Einstellungen</string>
+
+    <!--  Home Screen  -->
+    <string name="setting_btn_about">Über die App</string>
+    <string name="setting_btn_privacy">Datenschutz</string>
+    <string name="setting_btn_sound">Toneinstellung</string>
+    <string name="setting_btn_language">Spracheinstellung</string>
+    <string name="start">Start</string>
+
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">Beginne deine Reise</string>
+    <string name="txt_intro_rock_paper_scissors">Schere Stein Papier</string>
+    <string name="txt_intro_lucky_wheel">Glücksrad</string>
+    <string name="txt_intro_rps_description">Wähle deine Rolle und lass das Glück entscheiden! Jeder Spieler muss nur eine der beiden Rollen wählen, und die App wählt zufällig einen Gewinner. Schau, ob deine Strategie dir ein Lächeln schenken kann!</string>
+    <string name="txt_intro_explore_your_game">Erkunde dein Spiel!</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">Versuche dein Glück mit dem Rad!</string>
+    <string name="txt_intro_start">Start</string>
+    <string name="txt_intro_next">Weiter</string>
+    <string name="spin_play"><![CDATA[Drehen &amp; Spielen]]></string>
+    <string name="select_language">Sprache auswählen</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">Weiter</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">Inhalt konnte nicht geladen werden.</string>
+    <string name="check_network_connection_and_try_again">Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.</string>
+    <string name="retry">Erneut versuchen</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">App-Sprache</string>
+    <string name="done_select_language">Fertig</string>
+    <string name="version">"Version: "</string>
+    <string name="app_about_desc">Die App hilft dir, mit glücklichen Drehungen und Schere-Stein-Papier-Spielen unterhaltsame Entscheidungen zu treffen!</string>
+    <string name="privacy_and_policy">Datenschutz und Richtlinien</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">Feedback zu %1$s</string>
+    <string name="contact_the_developer">Kontakt zum Entwickler</string>
+    <string name="enable_sound_for_rps">Ton für Schere Stein Papier aktivieren</string>
+    <string name="enable_sound_for_wheel">Ton für das Rad aktivieren</string>
+</resources>

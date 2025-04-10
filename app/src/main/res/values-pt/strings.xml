@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucky Spin</string>
+    <!--  Title Screen  -->
+    <string name="settings">Configurações</string>
+    <string name="about_app">Sobre o App</string>
+    <string name="home">Início</string>
+    <string name="privacy">Privacidade</string>
+    <string name="rock_paper_scissors">Pedra, Papel e Tesoura</string>
+    <string name="sound_settings">Configurações de Som</string>
+    <string name="wheel">Roda</string>
+
+    <!--  Wheel Screen  -->
+    <string name="input_name">Insira o nome</string>
+
+    <!--  Home Screen  -->
+    <string name="home_btn_wheel">Roda de nomes</string>
+    <string name="home_btn_rock_hand">Pedra, Papel e Tesoura</string>
+    <string name="home_btn_setting">Configurações</string>
+
+    <!--  Home Screen  -->
+    <string name="setting_btn_about">Sobre o App</string>
+    <string name="setting_btn_privacy">Privacidade</string>
+    <string name="setting_btn_sound">Configuração de Som</string>
+    <string name="setting_btn_language">Configuração de Idioma</string>
+    <string name="start">Iniciar</string>
+
+    <!--  Onboard Screen  -->
+    <string name="start_your_journey">Comece sua jornada</string>
+    <string name="txt_intro_rock_paper_scissors">Pedra, Papel e Tesoura</string>
+    <string name="txt_intro_lucky_wheel">Roda da Fortuna</string>
+    <string name="txt_intro_rps_description">Escolha seu papel e deixe a sorte decidir! Cada jogador só precisa escolher uma das duas funções do jogo, então o aplicativo selecionará um vencedor aleatoriamente. Veja se sua estratégia pode render boas risadas!</string>
+    <string name="txt_intro_explore_your_game">Explore seu jogo!</string>
+    <string name="txt_intro_try_your_luck_with_the_wheel">Tente sua sorte com a roda!</string>
+    <string name="txt_intro_start">Iniciar</string>
+    <string name="txt_intro_next">Próximo</string>
+    <string name="spin_play"><![CDATA[Girar &amp; Jogar]]></string>
+    <string name="select_language">Selecione o Idioma</string>
+
+    <!--  Onboard Screen  -->
+    <string name="txt_first_language_next">Próximo</string>
+
+    <!--  Privacy Screen  -->
+    <string name="unable_to_load_content">Não foi possível carregar o conteúdo.</string>
+    <string name="check_network_connection_and_try_again">Por favor, verifique sua conexão de rede e tente novamente.</string>
+    <string name="retry">Tentar Novamente</string>
+
+    <!--  Language Screen  -->
+    <string name="app_language">Idioma do App</string>
+    <string name="done_select_language">Concluído</string>
+    <string name="version">"Versão: "</string>
+    <string name="app_about_desc">O app ajuda você a fazer escolhas divertidas com giros de sorte e jogos de pedra, papel e tesoura!</string>
+    <string name="privacy_and_policy">Política de Privacidade</string>
+    <string name="develop_mail">mailto:qsongdevelop@gmail.com</string>
+    <string name="feedback_on">Feedback em %1$s</string>
+    <string name="contact_the_developer">Contatar o desenvolvedor</string>
+    <string name="enable_sound_for_rps">Ativar som para Pedra, Papel e Tesoura</string>
+    <string name="enable_sound_for_wheel">Ativar som para Roda</string>
+</resources>
