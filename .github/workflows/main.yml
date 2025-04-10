@@ -4,27 +4,38 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: [master]  
-  # allows you to run this workflow manually from the Actions tab  
+    branches: [master]
   workflow_dispatch:
 
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout the code
+      - name: Checkout code
         uses: actions/checkout@v4.2.2
 
-      - name: Run Lint
-        run: ./gradlew lint
-
-      - name: Upload lint report
-        uses: actions/upload-artifact@v4.6.2
+      - name: Setup JDK
+        uses: actions/setup-java@v4
         with:
-          name: lint-report
-          path: app/build/reports/*.html
+          distribution: 'temurin'
+          java-version: '17'  # hoặc version Java bạn đang dùng
 
-      - name: Add lint report to job summary
+      - name: Run lint
+        run: ./gradlew lint  # hoặc lintProdDebug tuỳ variant bạn muốn
+
+      - name: Prepare lint report for GitHub Pages
+        run: |
+          mkdir -p ./lint-report
+          cp -r ./app/build/reports/* ./lint-report/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./lint-report
+
+      - name: Add link to GitHub Pages report in job summary
         run: |
           echo "### 🔍 Lint Report" >> $GITHUB_STEP_SUMMARY
-          echo "➡️ [Download Lint Report](./artifact/lint-report)" >> $GITHUB_STEP_SUMMARY  
+          echo "➡️ [View Lint Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/lint-results-debug.html)" >> $GITHUB_STEP_SUMMARY
