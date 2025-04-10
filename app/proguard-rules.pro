@@ -19,3 +19,23 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Stack Trace
+-keepattributes LineNumberTable,SourceFile
+-renamesourcefileattribute SourceFile
+
+# You can specify any path and filename.
+-printconfiguration tmp/full-r8-config.txt
+
+# Suppress warnings if you are NOT using IAP:
+-dontwarn com.google.**
+
+-keepattributes Signature
+
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+
+-dontwarn okio.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
+-dontwarn com.squareup.okhttp.**

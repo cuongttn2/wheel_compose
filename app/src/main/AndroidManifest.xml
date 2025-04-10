@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".ui.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,11 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WheelCompose"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.WheelCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +27,62 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.onboard.OnboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.wheel.WheelActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.rock_paper_scissors.RPSActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.sound_setting.SoundSettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.about.AboutAppActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.language.language_first.LanguageFirstActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
+        <activity
+            android:name=".ui.language.language_settings.LanguageSettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WheelCompose">
+        </activity>
+
     </application>
 
 </manifest>

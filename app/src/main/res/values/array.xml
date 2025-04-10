@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="home_nav_btn_icon">
+        <item>@drawable/ic_btn_wheel_of_fortune</item>
+        <item>@drawable/ic_btn_rock_paper_scissors</item>
+        <item>@drawable/ic_btn_setting</item>
+    </integer-array>
+
+    <string-array name="home_nav_btn_name">
+        <item>@string/home_btn_wheel</item>
+        <item>@string/home_btn_rock_hand</item>
+        <item>@string/home_btn_setting</item>
+    </string-array>
+
+    <integer-array name="setting_nav_btn_icon">
+        <item>@drawable/ic_btn_sound</item>
+        <item>@drawable/ic_btn_language</item>
+        <item>@drawable/ic_btn_about</item>
+        <item>@drawable/ic_btn_privacy</item>
+    </integer-array>
+
+    <string-array name="setting_nav_btn_name">
+        <item>@string/setting_btn_sound</item>
+        <item>@string/setting_btn_language</item>
+        <item>@string/setting_btn_about</item>
+        <item>@string/setting_btn_privacy</item>
+    </string-array>
+
+    <string-array name="languages_code">
+        <item>en</item>
+        <item>de</item>
+        <item>es</item>
+        <item>pt</item>
+        <item>fr</item>
+        <item>hi</item>
+        <item>in</item>
+    </string-array>
+
+    <integer-array name="languages_flag">
+        <item>@drawable/ic_flag_en</item>
+        <item>@drawable/ic_flag_de</item>
+        <item>@drawable/ic_flag_es</item>
+        <item>@drawable/ic_flag_pt</item>
+        <item>@drawable/ic_flag_fr</item>
+        <item>@drawable/ic_flag_hi</item>
+        <item>@drawable/ic_flag_in</item>
+    </integer-array>
+
+    <string-array name="languages_name">
+        <item>English</item>
+        <item>Deutsch</item>
+        <item>Español</item>
+        <item>Português</item>
+        <item>Français</item>
+        <item>हिन्दी</item>
+        <item>Bahasa Indonesia</item>
+    </string-array>
+
+</resources>
