@@ -16,11 +16,14 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: Run Lint
-        run: ./gradlew lintProdDebug
+        run: ./gradlew lint
 
-      - name: Upload html test report
+      - name: Find lint report
+        run: find app/build/reports/ -name "*.html"
+
+      - name: Upload lint report
         uses: actions/upload-artifact@v4.6.2
         with:
-          name: index.html
-          path: app/build/reports/lint-result-debug.html
+          name: lint-report
+          path: app/build/reports/*.html
 
