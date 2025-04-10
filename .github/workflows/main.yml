@@ -22,7 +22,7 @@ jobs:
           java-version: '17'  # Hoặc version bạn đang dùng
 
       - name: Run lint
-        run: ./gradlew lintDebug  # Hoặc lintProdDebug tuỳ project của bạn
+        run: ./gradlew lint  # Hoặc lintProdDebug tuỳ project của bạn
 
       - name: Prepare lint report for GitHub Pages
         run: |
