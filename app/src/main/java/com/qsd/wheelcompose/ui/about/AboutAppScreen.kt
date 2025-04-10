@@ -43,7 +43,7 @@ fun AboutAppScreen() {
     ) {
         // App Logo
         Image(
-            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            painter = painterResource(id = R.drawable.ic_logo),
             contentDescription = "App Logo",
             modifier = Modifier.size(100.dp)
         )
